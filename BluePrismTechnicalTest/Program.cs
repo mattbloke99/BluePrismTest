@@ -13,12 +13,11 @@ namespace BluePrismTechnicalTest
             string endWord = args[2];
             string resultFile = args[3];
 
-
-            IEnumerable<string> ladderDictionary = new DictionaryLoader(dictionaryFile).LadderDictionary;
+            IEnumerable<string> ladderDictionary = new DictionaryLoader().Load(dictionaryFile);
 
             ladderDictionary = new WordLadderDictionary(ladderDictionary).GetWordsOfLength(4); ;
 
-            var ladders = new WordLadders().FindLadders(startWord, endWord, ladderDictionary.ToList());
+            IEnumerable<IList<string>> ladders = new WordLadders().FindLadders(startWord, endWord, ladderDictionary.ToList());
 
             ResultFileService resultFileService = new ResultFileService(resultFile);
 

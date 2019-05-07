@@ -2,7 +2,7 @@
   "profiles": {
     "BluePrismTechnicalTest": {
       "commandName": "Project",
-      "commandLineArgs": "C:\\Users\\Matt\\source\\repos\\BluePrismTechnicalTest\\BluePrismTechnicalTest\\words-english.txt anew spot C:\\Users\\Matt\\source\\repos\\BluePrismTechnicalTest\\BluePrismTechnicalTest\\results-file.txt"
+      "commandLineArgs": "C:\\Users\\Matt\\source\\repos\\BluePrismTechnicalTest\\BluePrismTechnicalTest\\words-english.txt spin spot C:\\Users\\Matt\\source\\repos\\BluePrismTechnicalTest\\BluePrismTechnicalTest\\results-file.txt"
     }
   }
 }

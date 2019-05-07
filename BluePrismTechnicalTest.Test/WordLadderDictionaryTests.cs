@@ -10,7 +10,7 @@ namespace Tests
         [Test]
         public void GetWordsOfLengthTest()
         {
-            var testWordDictionary = new List<string> { "spin", "spit", "spat", "spot", "span", "spelling","spelt","sparkling" };
+            IList<string> testWordDictionary = new List<string> { "spin", "spit", "spat", "spot", "span", "spelling","spelt","sparkling" };
 
             IEnumerable<string> wordLadderDictionary = new WordLadderDictionary(testWordDictionary).GetWordsOfLength(4); ;
 

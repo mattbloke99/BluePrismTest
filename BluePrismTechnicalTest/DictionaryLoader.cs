@@ -3,10 +3,9 @@ using System.IO;
 
 namespace BluePrismTechnicalTest
 {
-    public class DictionaryLoader
+    public class DictionaryLoader : IDictionaryLoader
     {
-
-        public DictionaryLoader(string filePath)
+        public IEnumerable<string> Load(string filePath)
         {
             if (!File.Exists(filePath))
             {
@@ -24,10 +23,8 @@ namespace BluePrismTechnicalTest
 
                 }
 
-                LadderDictionary = ladderDictionary;
+                return ladderDictionary;
             }
         }
-
-        public IEnumerable<string> LadderDictionary { get; }
     }
 }

@@ -4,7 +4,6 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 
-
 namespace Tests
 {
     public class WordLaddersTests
@@ -12,11 +11,11 @@ namespace Tests
         [Test]
         public void FindLaddersTest()
         {
-            var testWordDictionary = new List<string> { "hit","hot", "dot", "dog", "lot", "log", "cog" };
+            IList<string> testWordDictionary = new List<string> { "hit","hot", "dot", "dog", "lot", "log", "cog" };
             
-            var ladders = new WordLadders().FindLadders("hit", "cog", testWordDictionary);
+            IEnumerable<IList<string>> ladders = new WordLadders().FindLadders("hit", "cog", testWordDictionary);
 
-            var expectedLadder = new List<string> { "hit", "hot", "dot", "dog", "cog" };
+            IList<string> expectedLadder = new List<string> { "hit", "hot", "dot", "dog", "cog" };
 
             foreach (var ladder in ladders)
             {
@@ -31,11 +30,11 @@ namespace Tests
         [Test]
         public void FindLaddersCaseSensitiveTest()
         {
-            var testWordDictionary = new List<string> { "hit", "hot", "dot", "dog", "lot", "log", "cog" };
+            IList<string> testWordDictionary = new List<string> { "hit", "hot", "dot", "dog", "lot", "log", "cog" };
 
-            var ladders = new WordLadders().FindLadders("Hit", "Cog", testWordDictionary);
+            IEnumerable<IList<string>> ladders = new WordLadders().FindLadders("Hit", "Cog", testWordDictionary);
 
-            var expectedLadder = new List<string> { "hit", "hot", "dot", "dog", "cog" };
+            IList<string> expectedLadder = new List<string> { "hit", "hot", "dot", "dog", "cog" };
 
             foreach (var ladder in ladders)
             {
@@ -46,8 +45,5 @@ namespace Tests
                 }
             }
         }
-
-
-
     }
 }

@@ -10,19 +10,19 @@ namespace Tests
         [Test]
         public void SaveResultFileServiceTest()
         {
+            IList<string> resultsFile = new List<string> { "Spin", "Spit", "Spot"};
 
-            var resultsFile = new List<string> { "Spin", "Spit", "Spot"};
-
-            ResultFileService resultFileService = new ResultFileService(@"C:\Users\Matt\source\repos\BluePrismTechnicalTest\BluePrismTechnicalTest\results-file.txt");
+            ResultFileService resultFileService = new ResultFileService(@"results-file.txt");
 
             resultFileService.Write(resultsFile);
             resultFileService = null;
 
-            DictionaryLoader dictionaryLoader = new DictionaryLoader(@"C:\Users\Matt\source\repos\BluePrismTechnicalTest\BluePrismTechnicalTest\results-file.txt");
+            IDictionaryLoader dictionaryLoader = new DictionaryLoader();
 
-            Assert.IsInstanceOf<IEnumerable<string>>(dictionaryLoader.LadderDictionary);
-            Assert.NotZero(dictionaryLoader.LadderDictionary.Count());
+            IEnumerable<string> dictionary = dictionaryLoader.Load(@"results-file.txt");
 
+            Assert.IsInstanceOf<IEnumerable<string>>(dictionary);
+            Assert.NotZero(dictionary.Count());
         }
     }
 }
